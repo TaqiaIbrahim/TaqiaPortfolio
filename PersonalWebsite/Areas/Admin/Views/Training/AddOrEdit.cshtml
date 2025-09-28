@@ -1,0 +1,48 @@
+﻿@model TaqiaPortFolio.Models.Training
+@{
+    ViewData["title"] = "Blog";
+}
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Add A Traning</h4>
+
+            <form class="forms-sample" asp-action="AddOrEdit">
+                <input type="hidden" asp-for="Id" />
+
+                <div class="form-group row">
+                    <label asp-for="Name" for="exampleInputDescription2" class="col-sm-3 col-form-label">Description</label>
+                    <div class="col-sm-9">
+                        <input asp-for="Name" type="text" class="form-control" id="exampleInputDescription2" placeholder="Description">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="place" for="exampleInputDescription2" class="col-sm-3 col-form-label">Place </label>
+                    <div class="col-sm-9">
+                        <input asp-for="place" type="text" class="form-control" id="exampleInputDescription2" placeholder="Place">
+                        <span asp-validation-for="place" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="StartDate" for="exampleInputDate2" class="col-sm-3 col-form-label"> Start Date</label>
+                    <div class="col-sm-9">
+                        <input asp-for="StartDate" type="date" class="form-control" id="exampleInputDate2" placeholder="Start Date">
+                        <span asp-validation-for="StartDate" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="EndDate" for="exampleInputDate2" class="col-sm-3 col-form-label"> End Date</label>
+                    <div class="col-sm-9">
+                        <input asp-for="EndDate" type="date" class="form-control" id="exampleInputDate2" placeholder="End Date">
+                        <span asp-validation-for="EndDate" class="text-danger"></span>
+                    </div>
+                </div>
+                
+                
+                <button asp-action="AddOrEdit" type="submit" class="btn btn-primary mr-2"> Submit </button>
+                <button asp-action="Index" class="btn btn-light">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

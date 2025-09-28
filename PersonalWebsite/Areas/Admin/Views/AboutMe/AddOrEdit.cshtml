@@ -1,0 +1,79 @@
+﻿@model TaqiaPortFolio.Models.AboutMe
+@{
+    ViewData["Title"] = "About Me";
+}
+
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Add Your Information</h4>
+           
+            <form class="forms-sample" asp-action="AddOrEdit" enctype="multipart/form-data" method="post">
+                <input type="hidden"asp-for="Id" />
+                <div class="form-group row">
+                    <label asp-for="Name"  for="exampleInputUsername2" class="col-sm-3 col-form-label">Name</label>
+                    <div class="col-sm-9">
+                        <input asp-for="Name" type="text" class="form-control" id="exampleInputUsername2" placeholder="Name">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="Image" for="exampleInputDegree2" class="col-sm-3 col-form-label">Image</label>
+                    <div class="col-sm-9">
+                        <input asp-for="Image" type="file" name="Files"  class="form-control" id="exampleInputDegree2" placeholder="Image">
+                        <span asp-validation-for="Degree" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="Degree" for="exampleInputDegree2" class="col-sm-3 col-form-label">Degree</label>
+                    <div class="col-sm-9">
+                        <input asp-for ="Degree" type="text" class="form-control" id="exampleInputDegree2" placeholder="Degree">
+                        <span asp-validation-for="Degree" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="Phone" for="exampleInputPhone" class="col-sm-3 col-form-label">Phone</label>
+                    <div class="col-sm-9">
+                        <input  asp-for="Phone" type="text" class="form-control" id="exampleInputPhone" placeholder="Phone number">
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label asp-for="Adderss" for="exampleInputAddress" class="col-sm-3 col-form-label">Address</label>
+                    <div class="col-sm-9">
+                        <input asp-for="Adderss" type="text" class="form-control" id="exampleInputAddress" placeholder="Address">
+                        <span asp-validation-for="Adderss" class="text-danger"></span>
+                    </div>
+                </div>
+            
+
+                <div class="form-group row">
+                    <label asp-for="Email" for="exampleInputEmail" class="col-sm-3 col-form-label">Email</label>
+                    <div class="col-sm-9">
+                        <input asp-for="Email" type="email" class="form-control" id="exampleInputEmail" placeholder="Email">
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label asp-for="Freelancer" for="exampleInputFreelancer" class="col-sm-3 col-form-label">Freelancer</label>
+                    <div class="col-sm-9">
+                        <input asp-for=" Freelancer" type="text" class="form-control" id="exampleInputFreelancer" placeholder="Freelancer">
+                        <span asp-validation-for="Freelancer"  class="text-danger"></span>
+                    </div>
+                </div>
+           
+                
+                <div class="form-check form-check-flat form-check-primary">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input"> Remember me <i class="input-helper"></i>
+                       
+                    </label>
+                </div>
+                <button asp-action="AddOrEdit" type="submit" class="btn btn-primary mr-2"> Submit </button>
+                <button asp-action="Index"   class="btn btn-light">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

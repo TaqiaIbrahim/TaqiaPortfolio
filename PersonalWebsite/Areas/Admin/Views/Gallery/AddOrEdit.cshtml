@@ -1,0 +1,50 @@
+﻿@model TaqiaPortFolio.Models.Gallery
+@{
+    ViewData["Title"] = "Gallery";
+}
+
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Gallery</h4>
+
+            <form class="forms-sample" asp-action="AddOrEdit" enctype="multipart/form-data">
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group row">
+                    <label asp-for="Title" for="exampleInputUsername2" class="col-sm-3 col-form-label">Title</label>
+                    <div class="col-sm-9">
+                        <input asp-for="Title" type="text" class="form-control" id="exampleInputUsername2" placeholder="Title">
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label asp-for="Description" for="exampleInputUsername2" class="col-sm-3 col-form-label">Description</label>
+                    <div class="col-sm-9">
+                        <input asp-for="Description" type="text" class="form-control" id="exampleInputUsername2" placeholder="Description">
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label asp-for="GitHubUrl" for="exampleInputDegree2" class="col-sm-3 col-form-label">GitHubUrl</label>
+                    <div class="col-sm-9">
+                        <input asp-for="GitHubUrl" type="text" class="form-control" id="exampleInputDegree2" placeholder="GitHubUrl">
+                        <span asp-validation-for="GitHubUrl" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="Imagepath" for="exampleInputPhone" class="col-sm-3 col-form-label">Image</label>
+                    <div class="col-sm-9">
+                        <input asp-for="Imagepath" type="file" class="form-control" id="exampleInputdate" placeholder="Image" name="Files">
+                        <span asp-validation-for="Imagepath" class="text-danger"></span>
+                    </div>
+                </div>
+
+
+                <button asp-action="AddOrEdit" type="submit" class="btn btn-primary mr-2"> Submit </button>
+                <button asp-action="Index" class="btn btn-light">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

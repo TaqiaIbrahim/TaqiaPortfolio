@@ -1,0 +1,34 @@
+﻿@model TaqiaPortFolio.Models.Service
+@{
+    ViewData["Title"] = "Services";
+}
+
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Add Services</h4>
+
+            <form class="forms-sample" asp-action="AddOrEdit">
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group row">
+                    <label asp-for="Name" for="exampleInputUsername2" class="col-sm-3 col-form-label">Name</label>
+                    <div class="col-sm-9">
+                        <input asp-for="Name" type="text" class="form-control" id="exampleInputUsername2" placeholder="Name">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label asp-for="Description" for="exampleInputDegree2" class="col-sm-3 col-form-label">Description</label>
+                    <div class="col-sm-9">
+                        <input asp-for="Description" type="text" class="form-control" id="exampleInputDegree2" placeholder="Description">
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                </div>
+                
+                <button asp-action="AddOrEdit" type="submit" class="btn btn-primary mr-2"> Submit </button>
+                <button asp-action="Index" class="btn btn-light">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

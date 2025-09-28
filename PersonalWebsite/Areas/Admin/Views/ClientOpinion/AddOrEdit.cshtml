@@ -1,0 +1,39 @@
+﻿@model TaqiaPortFolio.Models.ClientOpinion
+@{
+    ViewData["title"] = "Clients opinions";
+}
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">  Clients Opinions</h4>
+
+            <form class="forms-sample" asp-action="AddOrEdit">
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group row">
+                    <label asp-for="Name" for="exampleInputname2" class="col-sm-3 col-form-label">  Client Name </label>
+                    <div class="col-sm-9">
+                        <input asp-for="Name" type="text" class="form-control" id="exampleInputname2" placeholder=" Client Name">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="job" for="exampleInputjob2" class="col-sm-3 col-form-label">job</label>
+                    <div class="col-sm-9">
+                        <input asp-for="job" type="text" class="form-control" id="exampleInputjob2" placeholder="job">
+                        <span asp-validation-for="job" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label asp-for="Opinion" for="exampleInputOpinion2" class="col-sm-3 col-form-label">Opinion</label>
+                    <div class="col-sm-9">
+                        <input asp-for="Opinion" type="text" class="form-control" id="exampleInputOpinion2" placeholder="Opinion">
+                        <span asp-validation-for="Opinion" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <button asp-action="AddOrEdit" type="submit" class="btn btn-primary mr-2"> Submit </button>
+                <button asp-action="Index" class="btn btn-light">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

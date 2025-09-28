@@ -1,0 +1,48 @@
+﻿@model IEnumerable<ClientOpinion>
+
+    @{
+    ViewData["title"] = "Clients Opinions";
+    }
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <a asp-action="AddOrEdit" class="btn btn-primary mb-3">Add</a>
+
+            <h4 class="card-title">Clients Opinions</h4>
+            <br />
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Client Name</th>
+                            <th>Client Jop</th>
+                            <th>Opinion</th>
+                            <th>Actions</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td> @item.Id</td>
+                                <td> @item.Name</td>
+                                <td> @item.job</td>
+                                <td>@item.Opinion</td>
+                                <td>
+                                    <a class="btn btn-info" asp-action="AddOrEdit" asp-route-id="@item.Id">Edit</a>
+                                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+
+                                </td>
+                            </tr>
+
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

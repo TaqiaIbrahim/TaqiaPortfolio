@@ -1,0 +1,45 @@
+﻿@model TaqiaPortFolio.Models.Slider
+@{
+    ViewData["Title"] = "Slider";
+}
+
+<div class="col-md-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Edit Slider</h4>
+
+            <form class="forms-sample" asp-action="AddOrEdit" enctype="multipart/form-data" method="post">
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group row">
+                    <label asp-for="Name" for="exampleInputUsername2" class="col-sm-3 col-form-label">Name</label>
+                    <div class="col-sm-9">
+                        <input asp-for="Name" type="text" class="form-control" id="exampleInputUsername2" placeholder="Name">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                </div>
+               
+                <div class="form-group row">
+                    <label asp-for="CV" for="exampleInputUsername2" class="col-sm-3 col-form-label">CV</label>
+                    <div class="col-sm-9">
+                        <input asp-for="CV" type="file" name="CVfile" class="form-control" id="exampleInputUsername2" placeholder="CV">
+                        <span asp-validation-for="CV" class="text-danger"></span>
+                    </div>
+                </div>
+              
+                
+                <div class="col-sm-12 fv-plugins-icon-container">
+                    <label asp-for="Image" class="control-lable">Image</label>
+                    <input asp-for="Image" class="form-control " type="file"  name="ImageFile"
+                           aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                    <span asp-validation-for="Image" class="text-danger"></span>
+                </div>
+                  
+                
+                <button asp-action="AddOrEdit" type="submit" class="btn btn-primary mr-2"> Submit </button>
+                <button asp-action="Index" class="btn btn-light">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+

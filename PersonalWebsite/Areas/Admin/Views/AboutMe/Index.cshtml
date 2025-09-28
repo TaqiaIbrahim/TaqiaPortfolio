@@ -1,0 +1,50 @@
+﻿@model IEnumerable<AboutMe>
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <a asp-action="AddOrEdit" class="btn btn-primary mb-3">Add</a>
+           
+            <h4 class="card-title">About Me</h4>
+           <br />
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Degree</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>Email</th>
+                            <th>Freelancer</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <img src="@string.Format("/uploads/{0}",item.Image)" width="50" height="50" />
+                                </td>
+                            <td> @item.Name</td>
+                            <td> @item.Degree</td>
+                            <td> @item.Phone</td>
+                            <td> @item.Adderss</td>
+                            <td> @item.Email</td>
+                            <td> @item.Freelancer</td>
+                                <td>
+                                    <a class="btn btn-info " asp-action="AddOrEdit" asp-route-id="@item.Id"> Edit </a>
+                                    <a class="btn btn-danger " asp-action="Delete" asp-route-id="@item.Id"> Delete</a>
+                                </td>
+                            </tr>
+
+                        }
+                       
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
